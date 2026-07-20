@@ -170,7 +170,7 @@ Sou um QA Engineer em formação com algo que poucos têm: uma combinação real
 
 > Repositórios que demonstram a prática de QA:
 
-- 📂 [Test Cases]([#](https://github.com/Anemilton-Leite/Anemilton-Leite/blob/8f0daae06ea5b498aee76c5ac1afadeb313fc3f9/api_tests.md))
+- 📂 [Test Cases](#)
 - 📂 [Bug Reports](#)
 - 📂 [API Tests](#)
 - 📂 [Automation Suites](#)
