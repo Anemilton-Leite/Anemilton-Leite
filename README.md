@@ -58,16 +58,67 @@ Sou um desenvolvedor em formação com algo que poucos têm: uma combinação re
 
 ## 🛠️ Stack & Habilidades
 
-### Linguagens & Web
-![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+# 🧪 QA Engineer | Software Quality | Test Automation
+
+> "Quality is never an accident; it is always the result of intelligent effort."
+
+---
+
+## 🚀 Quality Assurance Stack
+
+### 🧪 Testes de Software
+![Manual Testing](https://img.shields.io/badge/Manual_Testing-2563EB?style=for-the-badge&logo=testinglibrary&logoColor=white)
+![Functional Testing](https://img.shields.io/badge/Functional_Testing-0EA5E9?style=for-the-badge)
+![Regression Testing](https://img.shields.io/badge/Regression_Testing-10B981?style=for-the-badge)
+![Exploratory Testing](https://img.shields.io/badge/Exploratory_Testing-F97316?style=for-the-badge)
+![API Testing](https://img.shields.io/badge/API_Testing-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+---
+
+### 🤖 Automação de Testes
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+
+---
+
+### 📡 APIs
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![REST API](https://img.shields.io/badge/REST_API-0F172A?style=for-the-badge)
+![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
+
+---
+
+### 💻 Linguagens
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
+
+---
+
+### 🌐 Desenvolvimento Web
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-### Back-end & Infra
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Security](https://img.shields.io/badge/Segurança_da_Informação-DC2626?style=for-the-badge&logo=hackthebox&logoColor=white)
-![Networks](https://img.shields.io/badge/Infraestrutura_de_Redes-0078D4?style=for-the-badge&logo=cisco&logoColor=white)
+
+---
+
+### 📋 Gestão Ágil
+![Scrum](https://img.shields.io/badge/Scrum-009FDA?style=for-the-badge&logo=scrumalliance&logoColor=white)
+![Kanban](https://img.shields.io/badge/Kanban-0052CC?style=for-the-badge&logo=trello&logoColor=white)
+![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
+
+---
+
+### ☁️ Cloud & DevOps
+![Microsoft Azure](https://img.shields.io/badge/Microsoft_Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+---
+
+### 🔒 Infraestrutura
+![Security](https://img.shields.io/badge/Information_Security-DC2626?style=for-the-badge&logo=hackthebox&logoColor=white)
+![Networks](https://img.shields.io/badge/Network_Infrastructure-0078D4?style=for-the-badge&logo=cisco&logoColor=white)
 
 ### Soft Skills & Gestão
 ![KPIs](https://img.shields.io/badge/Análise_de_KPIs-6366F1?style=for-the-badge&logo=googleanalytics&logoColor=white)
@@ -105,12 +156,13 @@ Sou um desenvolvedor em formação com algo que poucos têm: uma combinação re
 
 ---
 
-### 📞 Agente — Teleperformance (TAP Air Portugal)
+### 📞 Backoffice — Teleperformance (TAP Air Portugal)
 `Fev 2023 – Jul 2025 · Natal, RN`
 
-- Atendimento ao cliente internacional em português/inglês
-- Resolução de reclamações e suporte pós-venda
-- Otimização de processos de comunicação e registro em CRM
+-Análise de Sistemas e Triagem: Identificação e análise aprofundada de inconsistências em sistemas corporativos
+relatando falhas comportamentais de software para resolução pelas equipes técnicas.
+-Validação de Processos: Registro rigoroso de tratativas e acompanhamento de chamados (via CRM Salesforce), garantindo a qualidade da informação e o cumprimento estrito das regras de negócio operacionais.
+
 
 ---
 
