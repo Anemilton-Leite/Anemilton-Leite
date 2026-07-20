@@ -40,8 +40,8 @@ const anemilton = {
   nome:      "Anemilton Leite",
   local:     "Natal, RN 🇧🇷",
   formação:  ["ADS @ Estácio (2028)", "Ecologia @ UFRN (2023, com honras)"],
-  foco:      ["Web Development", "Back-end", "Network & Security", "IA"],
-  skills:    ["C", "JavaScript", "Node.js", "HTML", "CSS", "InfoSec"],
+  foco:      ["QA", "Back-end", "Network & Security", "IA"],
+  skills:    ["C", "JavaScript", "Node.js", "Python", "CSS", "Java"],
   diferenciais: [
     "Liderança comprovada em ambientes de alta pressão",
     "Gestão de KPIs e análise de desempenho",
