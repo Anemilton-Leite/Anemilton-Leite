@@ -170,10 +170,10 @@ Sou um QA Engineer em formação com algo que poucos têm: uma combinação real
 
 > Repositórios que demonstram a prática de QA:
 
-- 📂 [Test Cases](#)
-- 📂 [Bug Reports](#)
-- 📂 [API Tests](#)
-- 📂 [Automation Suites](#)
+- 📂 [Test Cases](test_case_login.md)
+- 📂 [Bug Reports](bug_reports.md)
+- 📂 [API Tests](https://github.com/Anemilton-Leite/Anemilton-Leite/blob/1680d647e27eaa61b16f6fd488469c8433d102cc/api_tests.md)
+- 📂 [Automation Suites](https://github.com/Anemilton-Leite/Automation-Suites/blob/8157beda9c1d56f21e81396576ea0153d50c215b/readme.md)
 - 📂 [Regression Suites](#)
 - 📂 [Postman Collections](#)
 - 📂 [Cypress Projects](#)
