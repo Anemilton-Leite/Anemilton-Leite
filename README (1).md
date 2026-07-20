@@ -168,7 +168,7 @@ Sou um QA Engineer em formação com algo que poucos têm: uma combinação real
 
 ## 🧪 QA Portfolio
 
-> Repositórios que demonstram a prática de QA (atualize os links conforme for publicando):
+> Repositórios que demonstram a prática de QA:
 
 - 📂 [Test Cases](#)
 - 📂 [Bug Reports](#)
