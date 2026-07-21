@@ -1,0 +1,227 @@
+{
+  "info": {
+    "name": "Auth API - Login Test Suite",
+    "description": "Coleção de testes da API de autenticação (/auth/login), derivada de api_tests.md. Autor: Anemilton Leite.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://api-staging.exemplo.com" },
+    { "key": "validEmail", "value": "usuario@teste.com" },
+    { "key": "validPassword", "value": "Senha@123" }
+  ],
+  "item": [
+    {
+      "name": "AT-001 - Login com credenciais válidas",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{validEmail}}\",\n  \"senha\": \"{{validPassword}}\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code é 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Response contém token', function () {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.token).to.be.a('string').and.not.empty;",
+              "});",
+              "pm.test('Response contém expiresIn > 0', function () {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.expiresIn).to.be.above(0);",
+              "});",
+              "pm.test('Response contém dados do usuário', function () {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.user).to.have.property('id');",
+              "  pm.expect(json.user).to.have.property('email');",
+              "});",
+              "pm.test('Tempo de resposta < 1000ms', function () {",
+              "  pm.expect(pm.response.responseTime).to.be.below(1000);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AT-002 - Login com senha incorreta",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{validEmail}}\",\n  \"senha\": \"SenhaErrada1\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code é 401', function () {",
+              "  pm.response.to.have.status(401);",
+              "});",
+              "pm.test('Mensagem de erro é genérica', function () {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.message).to.exist;",
+              "});",
+              "pm.test('Response não contém token', function () {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.token).to.not.exist;",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AT-003 - E-mail em formato inválido",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"usuarioteste.com\",\n  \"senha\": \"{{validPassword}}\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code é 400', function () {",
+              "  pm.response.to.have.status(400);",
+              "});",
+              "pm.test('Erro referencia o campo email', function () {",
+              "  const json = pm.response.json();",
+              "  pm.expect(JSON.stringify(json)).to.include('email');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AT-004 - Campo obrigatório ausente (senha)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{validEmail}}\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code é 400', function () {",
+              "  pm.response.to.have.status(400);",
+              "});",
+              "pm.test('Erro indica campo senha ausente', function () {",
+              "  const json = pm.response.json();",
+              "  pm.expect(JSON.stringify(json)).to.include('senha');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AT-005 - Rate limiting (5+ tentativas falhas)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"{{validEmail}}\",\n  \"senha\": \"SenhaErrada1\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Executar este request 6x em sequência (Postman Runner com 6 iterações)",
+              "// A partir da 6ª execução, espera-se bloqueio:",
+              "pm.test('Status code é 429 (na 6a tentativa) - ver BUG-001', function () {",
+              "  pm.expect([401, 429]).to.include(pm.response.code);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AT-006 - Injeção via payload (segurança)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"usuario@teste.com' OR '1'='1\",\n  \"senha\": \"qualquer\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/auth/login", "host": ["{{baseUrl}}"], "path": ["api", "v1", "auth", "login"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code não é 200 nem 500', function () {",
+              "  pm.expect([400, 401]).to.include(pm.response.code);",
+              "});",
+              "pm.test('Response não expõe stack trace', function () {",
+              "  pm.expect(pm.response.text().toLowerCase()).to.not.include('stacktrace');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "AT-007 - Acesso com token expirado",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{expiredToken}}" }
+        ],
+        "url": { "raw": "{{baseUrl}}/api/v1/users/me", "host": ["{{baseUrl}}"], "path": ["api", "v1", "users", "me"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code é 401', function () {",
+              "  pm.response.to.have.status(401);",
+              "});",
+              "pm.test('Indica token expirado', function () {",
+              "  pm.expect(pm.response.text().toLowerCase()).to.include('expired');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    }
+  ]
+}
